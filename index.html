@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number</title>
+    <style>
+        body{
+            background-color: rgba(128, 128, 128, 0.089);
+        
+        }
+        div{
+            margin-left: 30rem;
+            margin-top: 5rem;
+            background-color:indigo;
+            color: ivory;
+            width:25vw;
+            height:25vh;
+            text-align: center;
+            font-weight: bolder;
+            font-size: xx-large;
+            padding-top: 7rem;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create an array prototype to check whether a prime number is present in that array or not.</h1>
+    <div></div>
+    <script>
+Array.prototype.primenum = function () {
+        for(let i = 0; i < this.length; i++) {
+        if (this[i] <= 1) { 
+            return false;
+        } else {
+            for (var j = 2; j < this[i]; j++) {
+                if (this[i] % j === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }  
+    }
+} 
+const arr = [3, 10, 12];
+let s = arr.primenum();
+document.querySelector("div").innerText = s;
+
+</script>
+    
+</body>
+</html>
